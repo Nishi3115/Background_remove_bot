@@ -1,0 +1,8 @@
+aiogram==3.10.0
+rembg==2.0.57
+torch==2.3.0
+torchvision==0.18.0
+transformers==4.43.3
+pillow==10.4.0
+kornia==0.7.3
+timm==1.0.8
