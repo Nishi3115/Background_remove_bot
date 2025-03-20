@@ -43,8 +43,8 @@ BACKGROUND_OPTIONS = {
 
 # Инициализация модели RMBG-2.0 (выполняется один раз при запуске бота)
 rmbg_model = AutoModelForImageSegmentation.from_pretrained('briaai/RMBG-2.0', trust_remote_code=True)
-torch.set_float32_matmul_precision('high')  # Оптимизация для CUDA
-rmbg_model.to('cpu')  # Используем CPU, как в вашем примере
+torch.set_float32_matmul_precision('high')
+rmbg_model.to('cpu')  # Используем CPU
 rmbg_model.eval()  # Режим оценки
 
 # Настройки для обработки изображений в RMBG-2.0
@@ -128,7 +128,6 @@ async def process_background_choice(callback: types.CallbackQuery, state: FSMCon
     # Выбираем модель для удаления фона
     if used_rmbg:
         # Используем RMBG-2.0
-        # Предобработка: увеличиваем яркость, чтобы снег стал более "фоновым"
         enhancer = ImageEnhance.Brightness(input_image)
         preprocessed_image = enhancer.enhance(1.3)  # Увеличиваем яркость
 
