@@ -15,7 +15,7 @@ from torchvision import transforms
 from transformers import AutoModelForImageSegmentation
 
 # Токен бота
-TOKEN = "7760978837:AAGmuO8anfJ2egVrdXxhCmv5MmcHbE86pH8"  # Вставьте ваш токен
+TOKEN = ""  # Вставьте ваш токен
 
 # Создаем экземпляр бота и диспетчера
 bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
